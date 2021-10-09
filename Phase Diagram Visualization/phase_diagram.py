@@ -5,7 +5,6 @@ import itertools
 import matplotlib.pyplot as plt
 from colorlines import colorline
 from matplotlib import style
-# style.use('ggplot')
 
 
 
@@ -64,21 +63,10 @@ class PhaseDiagram:
         plt.show()
 
 
-a = 4
-b = 2
-e = 1
-g = 2
-def f(x, t):
-    y = np.zeros(shape=2)
-    y[0] = a*x[0] - g*x[0]*x[1]
-    y[1] = e*g*x[0]*x[1] - b*x[1]**2
-
-    return y
-
 def f(x, t):
     y = np.zeros(shape=2)
     y[0] = x[0] - x[1]*x[0]
-    y[1] = x[0]*x[1] - x[1]**4
+    y[1] = x[0]*x[1] - x[1]
     return y
 
 PD = PhaseDiagram(f)
